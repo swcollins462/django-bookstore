@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if  book != None %}
+    
+        <p><strong>Title:</strong> {{ book.title }}</p>
+        <p><strong>Author:</strong> {{ book.Author }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <p><strong>Date of Publication:</strong> {{ book.publish_date }}</p>
+        <p><strong>Stock:</strong> {{ book.stock }}</p>
+
+    {% endif %}
+
+
+{% endblock %}

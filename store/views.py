@@ -22,9 +22,16 @@ def store(request):
     return render(request, 'store/store.html', context)
 
 
-def display_book(request, book_id):
+def display_book(request, id):
+    try:
+        book = Book.objects.get(id=id)
+        title = book.title
+    except:
+        book = None
+        title = 'Book was not found.'
     context = {
-        'page': 'TEST' + str(book_id),
-        'menu_item': 'TEST' + str(book_id),
+        'page': title,
+        'menu_item': title,
+        'book': book
     }
-    return render(request, 'store/template.html', context)
+    return render(request, 'store/book.html', context)
